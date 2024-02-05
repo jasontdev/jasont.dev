@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from "./ProjectCard.astro";
+const allProjectsList = await getCollection('projects');
+---
+
+<div class="projectsOverview">
+  {allProjectsList.map((project) => <ProjectCard title={project.data.title} platforms={project.data.platforms} url={project.data.github} />)}
+</div>
+
+<style>
+  .projectsOverview {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  }
+</style>

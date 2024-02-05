@@ -1,0 +1,27 @@
+---
+import { Github, Linkedin } from "simple-icons-astro";
+import ProjectCard from "./ProjectCard.astro";
+---
+<div class="contact">
+  <a href="https://github.com/jasontdev" class="contact-link"><Github /> <span>Github</span></a>
+  <a href="https://www.linkedin.com/in/jason-telfer-540b46247/" class="contact-link"><Linkedin /> <span>LinkedIn</span></a>
+</div>
+
+<style>
+  .contact {
+      display: flex;
+      gap: 1rem;
+  }
+
+  .contact-link {
+      color: black;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+  }
+
+  .contact-link:visited {
+      color: black;
+  }
+</style>

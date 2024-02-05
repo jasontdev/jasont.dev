@@ -1,0 +1,58 @@
+---
+import Intro from "../components/Intro.astro";
+import Title from "../components/Title.astro";
+import Contact from "../components/Contact.astro";
+---
+<div class="mainContainer">
+  <div class="leftPanel">
+    <div>
+      <Title />
+      <Intro />
+    </div>
+      <Contact />
+  </div>
+  <div class="rightPanel">
+    <slot />
+  </div>
+</div>
+
+<style>
+    @media (min-width: 1024px) {
+        .leftPanel {
+            position: fixed;
+            float: left;
+            width: 21rem;
+        }
+
+        .rightPanel {
+            float: right;
+            max-width: 32rem;
+        }
+    }
+
+    .mainContainer {
+        margin: auto;
+        padding-top: 1rem;
+        max-width: 64rem;
+    }
+
+    .leftPanel {
+        display: flex;
+        flex-direction: column;
+        max-height: 36rem;
+        height: 100%;
+        gap: 1.5rem;
+    }
+
+    .rightPanel {
+        width: 100%;
+        padding-top: 2rem;
+    }
+
+   html {
+       font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+   }
+
+    .
+</style>
