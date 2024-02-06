@@ -1,19 +1,48 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import ProjectsOverview from "../components/ProjectsOverview.astro";
+import Intro from "../components/Intro.astro";
+import Title from "../components/Title.astro";
+import Contact from "../components/Contact.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content="{Astro.generator}" />
-    <title>jasont.dev</title>
-  </head>
-  <body>
-  <MainLayout>
+<MainLayout>
+  <div class="leftPanel">
+    <div>
+      <Title />
+      <Intro />
+    </div>
+    <Contact />
+  </div>
+  <div class="rightPanel">
+    <h1>Projects</h1>
     <ProjectsOverview />
-  </MainLayout>
-  </body>
-</html>
+  </div>
+</MainLayout>
+
+<style>
+    @media (min-width: 1024px) {
+        .leftPanel {
+            position: fixed;
+            float: left;
+            width: 21rem;
+        }
+
+        .rightPanel {
+            float: right;
+            max-width: 32rem;
+        }
+    }
+
+    .leftPanel {
+        display: flex;
+        flex-direction: column;
+        max-height: 36rem;
+        height: 100%;
+        gap: 1.5rem;
+    }
+
+    .rightPanel {
+        width: 100%;
+    }
+</style>
