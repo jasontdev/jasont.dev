@@ -5,7 +5,7 @@ const allProjectsList = await getCollection('projects');
 ---
 
 <div class="projectsOverview">
-  {allProjectsList.map((project) => <ProjectCard title={project.data.title} platforms={project.data.platforms} url={project.data.github} />)}
+  {allProjectsList.map((project) => <ProjectCard title={project.data.title} technologies={project.data.technologies} url={project.data.github} />)}
 </div>
 
 <style>

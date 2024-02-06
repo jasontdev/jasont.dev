@@ -1,0 +1,23 @@
+---
+interface Props {
+  technologies: string[]
+}
+
+const {technologies} = Astro.props;
+
+function renderTechnology(technology: string, index: number) {
+  if(index > 0) {
+    return ` / ${technology}`
+  } else {
+    return technology;
+  }
+}
+---
+
+<div class="technologies">{technologies.map((technologies, index) => renderTechnology(technologies, index))}</div>
+
+<style>
+  .technologies {
+      font-weight: 500;
+  }
+</style>
